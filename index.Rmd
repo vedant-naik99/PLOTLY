@@ -1,0 +1,22 @@
+---
+title: "plotly data representation"
+author: "Vedant Naik"
+date: "08/10/2020"
+output: ioslides_presentation
+---
+## Loading data and required packages
+The plot in the next slide represents the data of gender gap in earnings in US universities.
+```{r}
+data <- read.csv("https://raw.githubusercontent.com/plotly/datasets/master/school_earnings.csv") 
+library(plotly)
+```
+## plot
+```{r,echo=FALSE}
+options(warn = -1)
+fig<-plot_ly(data,x = ~Women,y = ~Men,text = ~School,type = "scatter",mode = "markers",marker = list(size = ~Gap,opacity = 0.5)) %>%layout(title = 'Gender Gap in Earninings',xaxis = list(showgrid = TRUE),yaxis = list(showgrid = TRUE))
+fig
+```
+
+## THANKS
+
+
